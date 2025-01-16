@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Challenge as ChallengeType } from '../types';
 
-interface ChallengeProps extends ChallengeType {}
+type ChallengeProps = ChallengeType
 
 export const ChallengeCard: FC<ChallengeProps> = ({ icon: Icon, title, domain, description, learnings }) => (
   <div className="group transform transition-all duration-300 hover:-translate-y-1">

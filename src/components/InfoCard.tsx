@@ -3,8 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { InfoCard as InfoCardType } from '../types';
 
-interface InfoCardProps extends InfoCardType {}
-
+type InfoCardProps = InfoCardType
 export const InfoCard: FC<InfoCardProps> = ({ icon: Icon, title, status, description }) => (
   <div className="group">
     <Card className="transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-br from-white to-blue-50">
