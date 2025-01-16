@@ -69,4 +69,10 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  p, div, span, li {
+    text-align: justify;
+  }
+}
+.no-justify {
+  text-align: inherit !important;
 }
