@@ -7,6 +7,7 @@ import { InfoCard } from '@/components/InfoCard';
 import { ChallengeCard } from '@/components/ChallengeCard';
 import { challenges } from '@/data/challenges';
 import { infoCards } from '@/data/info-cards';
+import { WorkshopApplication } from '@/types';
 
 const GitWashChallenges = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -104,7 +105,7 @@ const GitWashChallenges = () => {
         <TabsContent value="more" className="mt-6 space-y-6">
           <div className="space-y-4">
             {applications.length == 0 ? <>Pourquoi ne pas rajouter des ateliers pratiques et des miniconferences... ?</> :
-            applications.map((app: any) => (
+            applications.map((app: WorkshopApplication) => (
               <Card key={app.id} className="border shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold">{app.name}</CardTitle>
