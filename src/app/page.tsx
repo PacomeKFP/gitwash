@@ -1,6 +1,6 @@
 "use client"
-import React, { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import React, { useEffect, useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { GitWashLogo } from '@/components/GitWashLogo';
 import { InfoCard } from '@/components/InfoCard';
@@ -10,7 +10,17 @@ import { infoCards } from '@/data/info-cards';
 
 const GitWashChallenges = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  const [applications, setApplications] = useState([]);
 
+  useEffect(() => {
+    const fetchApplications = async () => {
+      const response = await fetch('/api/applications');
+      const data = await response.json();
+      setApplications(data);
+    };
+
+    fetchApplications();
+  }, []);
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="text-center mb-12 space-y-4">
@@ -24,29 +34,29 @@ const GitWashChallenges = () => {
         </p>
       </div>
 
-      <Tabs 
-        value={activeTab} 
-        onValueChange={setActiveTab} 
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
         className="mb-8"
       >
         <TabsList className="grid w-full grid-cols-3 mb-8">
-          <TabsTrigger 
+          <TabsTrigger
             value="overview"
             className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-700"
           >
             Vue d'ensemble
           </TabsTrigger>
-          <TabsTrigger 
+          <TabsTrigger
             value="challenges"
             className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-700"
           >
             Les défis
           </TabsTrigger>
-          <TabsTrigger 
+          <TabsTrigger
             value="more"
             className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-700"
           >
-            Ateliers et Conférences
+            Ateliers
           </TabsTrigger>
         </TabsList>
 
@@ -90,10 +100,27 @@ const GitWashChallenges = () => {
             <ChallengeCard key={idx} {...challenge} />
           ))}
         </TabsContent>
-        
+
         <TabsContent value="more" className="mt-6 space-y-6">
-          
-          Il est possible de rajouter des challenges et des workshops pour Chaque domaine
+          <div className="space-y-4">
+            {applications.length == 0 ? <>Pourquoi ne pas rajouter des ateliers pratiques et des miniconferences... ?</> :
+            applications.map((app: any) => (
+              <Card key={app.id} className="border shadow-sm">
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold">{app.name}</CardTitle>
+                  <CardDescription>Domaine: {app.domain}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    <span className="font-semibold">Thème:</span> {app.workshop}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Description:</span> {app.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </TabsContent>
       </Tabs>
     </div>
