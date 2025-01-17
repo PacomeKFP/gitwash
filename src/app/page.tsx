@@ -104,7 +104,7 @@ const GitWashChallenges = () => {
 
         <TabsContent value="more" className="mt-6 space-y-6">
           <div className="space-y-4">
-            {applications.length == 0 ? <>Pourquoi ne pas rajouter des ateliers pratiques et des miniconferences... ?</> :
+            {applications.length == 0 ? <>Pourquoi ne pas rajouter des ateliers pratiques et des conférences d'orientation sur les métiers liés à chaque défis... ?</> :
             applications.map((app: WorkshopApplication) => (
               <Card key={app.id} className="border shadow-sm">
                 <CardHeader>
