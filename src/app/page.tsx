@@ -2,98 +2,14 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { Brain, Cloud, Database, Cpu, Blocks, Calendar, Trophy, Sparkles, Clock } from 'lucide-react';
 import { GitWashLogo } from '@/components/GitWashLogo';
 import { InfoCard } from '@/components/InfoCard';
 import { ChallengeCard } from '@/components/ChallengeCard';
+import { challenges } from '@/data/challenges';
+import { infoCards } from '@/data/info-cards';
 
 const GitWashChallenges = () => {
   const [activeTab, setActiveTab] = useState('overview');
-
-  const infoCards = [
-    {
-      icon: Clock,
-      title: "Durée",
-      status: "En cours de réflexion",
-      description: "La durée exacte du challenge sera annoncée prochainement"
-    },
-    {
-      icon: Trophy,
-      title: "Enjeu",
-      status: "En cours de réflexion",
-      description: "Les récompenses et objectifs seront définis bientôt \n On verra bien..."
-    },
-    {
-      icon: Sparkles,
-      title: "Sponsors",
-      status: "En cours de recherche",
-      description: "Nous recherchons activement des partenaires pour soutenir l'événement"
-    },
-    {
-      icon: Calendar,
-      title: "Début",
-      status: "En Février",
-      description: "Le challenge démarrera en février, restez à l'écoute pour plus de détails"
-    }
-  ];
-
-  const challenges = [
-    {
-      icon: Database,
-      title: "Défi 1: GL - Gestion des Logs",
-      domain: "Développement d'application",
-      description: "Créer une petite application qui permet à un utilisateur d'enregistrer chaque fois qu'il se lave les mains. L'application doit offrir une interface simple où l'utilisateur appuie sur un bouton pour enregistrer chaque lavage.",
-      learnings: [
-        "Développer une interface simple avec React ou Flutter",
-        "Mettre en place un backend avec Firebase ou MongoDB",
-        "Gérer l'authentification des utilisateurs"
-      ]
-    },
-    {
-      icon: Brain,
-      title: "Défi 2: ML - Machine Learning",
-      domain: "Intelligence Artificielle",
-      description: "Utiliser les données collectées pour prédire quand un utilisateur se lavera les mains la prochaine fois en entraînant un modèle de machine learning sur les données historiques.",
-      learnings: [
-        "Collecter et préparer des données pour l'apprentissage machine",
-        "Utiliser scikit-learn ou TensorFlow pour l'entraînement",
-        "Appliquer des techniques de régression et séries temporelles"
-      ]
-    },
-    {
-      icon: Cloud,
-      title: "Défi 3: CL - Cloud Computing",
-      domain: "Cloud Computing",
-      description: "Déployer l'application et le modèle de machine learning dans le cloud en utilisant des services comme Heroku, AWS, ou Google Cloud.",
-      learnings: [
-        "Mettre en place des services cloud pour l'hébergement",
-        "Déployer des modèles ML sur des plateformes cloud",
-        "Comprendre les bases du CI/CD"
-      ]
-    },
-    {
-      icon: Cpu,
-      title: "Défi 4: IoT - Simulation",
-      domain: "Internet des Objets",
-      description: "Simuler des capteurs physiques pour enregistrer les événements de lavage sans matériel physique, en créant des données simulées.",
-      learnings: [
-        "Comprendre le fonctionnement des capteurs IoT",
-        "Utiliser Node-RED pour simuler des flux de données",
-        "Travailler avec le protocole MQTT"
-      ]
-    },
-    {
-      icon: Blocks,
-      title: "Défi 5: Blockchain",
-      domain: "Blockchain",
-      description: "Créer un smart contract sur la blockchain pour enregistrer chaque lavage et mettre en place un système de récompenses sous forme de tokens.",
-      learnings: [
-        "Comprendre les smart contracts sur Ethereum",
-        "Développer des contrats en Solidity",
-        "Interagir avec la blockchain via Web3.js"
-      ]
-    }
-  ];
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -113,7 +29,7 @@ const GitWashChallenges = () => {
         onValueChange={setActiveTab} 
         className="mb-8"
       >
-        <TabsList className="grid w-full grid-cols-2 mb-8">
+        <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger 
             value="overview"
             className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-700"
@@ -125,6 +41,12 @@ const GitWashChallenges = () => {
             className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-700"
           >
             Les défis
+          </TabsTrigger>
+          <TabsTrigger 
+            value="more"
+            className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-700"
+          >
+            Ateliers et Conférences
           </TabsTrigger>
         </TabsList>
 
@@ -167,6 +89,11 @@ const GitWashChallenges = () => {
           {challenges.map((challenge, idx) => (
             <ChallengeCard key={idx} {...challenge} />
           ))}
+        </TabsContent>
+        
+        <TabsContent value="more" className="mt-6 space-y-6">
+          
+          Il est possible de rajouter des challenges et des workshops pour Chaque domaine
         </TabsContent>
       </Tabs>
     </div>
