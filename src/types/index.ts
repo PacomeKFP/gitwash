@@ -24,3 +24,24 @@ export interface WorkshopApplication {
   description: string;
   createdAt?: string | Date;
 }
+
+export type Speaker = {
+  name: string;
+  email: string;
+  title: string;
+  avatar: string;
+};
+
+export type Schedule = {
+  date: string; // Format ISO8601 (YYYY-MM-DD)
+  time: string; // Format HH:mm
+  duration: string; // Durée au format "2h", "30min", etc.
+};
+
+export type WorkshopType = {
+  speaker: Speaker;
+  schedule: Schedule;
+  domain: string;
+  theme: string;
+  description: string;
+};
