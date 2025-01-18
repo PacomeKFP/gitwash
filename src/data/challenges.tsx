@@ -1,59 +1,64 @@
-import { Blocks, Database, Brain, Cpu, Cloud  } from "lucide-react";
+import { Blocks, Database, Brain, Cpu, Cloud } from "lucide-react";
 
-export   const challenges = [
-    {
-      icon: Database,
-      title: "Défi 1: GL - Gestion des Logs",
-      domain: "Développement d'application",
-      description: "Créer une petite application qui permet à un utilisateur d'enregistrer chaque fois qu'il se lave les mains. L'application doit offrir une interface simple où l'utilisateur appuie sur un bouton pour enregistrer chaque lavage.",
-      learnings: [
-        "Développer une interface simple avec React ou Flutter",
-        "Mettre en place un backend avec Firebase ou MongoDB",
-        "Gérer l'authentification des utilisateurs"
-      ]
-    },
-    {
-      icon: Brain,
-      title: "Défi 2: ML - Machine Learning",
-      domain: "Intelligence Artificielle",
-      description: "Utiliser les données collectées pour prédire quand un utilisateur se lavera les mains la prochaine fois en entraînant un modèle de machine learning sur les données historiques.",
-      learnings: [
-        "Collecter et préparer des données pour l'apprentissage machine",
-        "Utiliser scikit-learn ou TensorFlow pour l'entraînement",
-        "Appliquer des techniques de régression et séries temporelles"
-      ]
-    },
-    {
-      icon: Cloud,
-      title: "Défi 3: CL - Cloud Computing",
-      domain: "Cloud Computing",
-      description: "Déployer l'application et le modèle de machine learning dans le cloud en utilisant des services comme Heroku, AWS, ou Google Cloud.",
-      learnings: [
-        "Mettre en place des services cloud pour l'hébergement",
-        "Déployer des modèles ML sur des plateformes cloud",
-        "Comprendre les bases du CI/CD"
-      ]
-    },
-    {
-      icon: Cpu,
-      title: "Défi 4: IoT - Simulation",
-      domain: "Internet des Objets",
-      description: "Simuler des capteurs physiques pour enregistrer les événements de lavage sans matériel physique, en créant des données simulées.",
-      learnings: [
-        "Comprendre le fonctionnement des capteurs IoT",
-        "Utiliser Node-RED pour simuler des flux de données",
-        "Travailler avec le protocole MQTT"
-      ]
-    },
-    {
-      icon: Blocks,
-      title: "Défi 5: Blockchain",
-      domain: "Blockchain",
-      description: "Créer un smart contract sur la blockchain pour enregistrer chaque lavage et mettre en place un système de récompenses sous forme de tokens.",
-      learnings: [
-        "Comprendre les smart contracts sur Ethereum",
-        "Développer des contrats en Solidity",
-        "Interagir avec la blockchain via Web3.js"
-      ]
-    }
-  ];
+export const challenges = [
+  {
+    icon: Database,
+    title: "Défi 1: GL - Gestion des Logs 📝",
+    domain: "Développement d'application",
+    description: "Une petite app ludique pour suivre tes habitudes de lavage de mains ! Note chaque lavage en un clic, suis ton évolution et reçois des rappels pour garder le rythme. Ensemble, on rend l'hygiène des mains fun et régulière ! 🚰✨",
+    learnings: [
+      "Construire une interface utilisateur simple et conviviale",
+      "Mettre en place un système de stockage de données",
+      "Créer des rappels intelligents et motivants"
+    ],
+    keywords: ["Frontend", "Backend", "API REST", "Base de données", "Authentification"]
+  },
+  {
+    icon: Brain,
+    title: "Défi 2: ML - Machine Learning 🤖",
+    domain: "Intelligence Artificielle",
+    description: "On va rendre ton app super intelligente ! À partir d'un jeu de données fourni sur les habitudes de lavage de mains, on va explorer, nettoyer et analyser ces données pour prédire les meilleurs moments pour se laver les mains. C'est comme avoir un assistant personnel qui devine tes besoins ! 🔮",
+    learnings: [
+      "Explorer et nettoyer des données réelles comme un data scientist",
+      "Créer un modèle d'IA qui comprend les habitudes d'hygiène",
+      "Concevoir des recommandations personnalisées et intelligentes"
+    ],
+    keywords: ["Data Science", "Machine Learning", "Prédiction", "Analyse de données"]
+  },
+  {
+    icon: Cloud,
+    title: "Défi 3: CL - Cloud Computing ☁️",
+    domain: "Cloud Computing",
+    description: "On passe à la vitesse supérieure ! Découvre comment déployer ton app sur le cloud (AWS, Google Cloud ou Azure), configure ton propre serveur, et entraîne tes modèles d'IA en production. C'est l'occasion de voir ton projet prendre son envol ! 🚀",
+    learnings: [
+      "Configurer et déployer une application web dans le cloud",
+      "Mettre en place un environnement d'entraînement pour l'IA",
+      "Gérer un serveur en production comme un pro"
+    ],
+    keywords: ["AWS", "Azure", "Google Cloud", "Déploiement", "DevOps"]
+  },
+  {
+    icon: Cpu,
+    title: "Défi 4: IoT - Prototype Virtuel 🔌",
+    domain: "Internet des Objets",
+    description: "On plonge dans l'IoT ! Simule des capteurs temps réel pour détecter automatiquement les lavages de mains, traite les données avec un OS temps réel, et connecte tout ça à ton app. Le futur de l'hygiène connectée, c'est maintenant ! 🎮",
+    learnings: [
+      "Simuler des capteurs IoT temps réel",
+      "Traiter des données sur un OS temps réel",
+      "Intégrer des données IoT à une application web"
+    ],
+    keywords: ["RTOS", "Capteurs", "Temps réel", "Acquisition de données", "Edge Computing"]
+  },
+  {
+    icon: Blocks,
+    title: "Défi 5: Blockchain ⛓️",
+    domain: "Blockchain",
+    description: "Et si on transformait les lavages de mains en crypto ? À chaque fois que tu te laves les mains, tu mines des tokens ! Plus tu es propre, plus tu es riche. C'est la révolution de l'hygiène 2.0 ! 💎",
+    learnings: [
+      "Créer des smart contracts sur Ethereum comme un chef",
+      "Lancer ta propre crypto (qui va peut-être exploser 🚀)",
+      "Intégrer le minage par activité dans l'app"
+    ],
+    keywords: ["Ethereum", "Smart Contracts", "Web3", "DeFi", "Tokenisation"]
+  }
+];

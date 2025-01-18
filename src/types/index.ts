@@ -4,6 +4,7 @@ export interface Challenge {
   domain: string;
   description: string;
   learnings: string[];
+  keywords: string[];
 }
 
 export interface InfoCard {
